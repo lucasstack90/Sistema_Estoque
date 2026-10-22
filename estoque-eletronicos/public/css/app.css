@@ -1,0 +1,72 @@
+:root {
+    --sidebar-bg: #14213d;
+    --sidebar-active: #0d6efd;
+}
+
+body {
+    background: #f4f6fa;
+}
+
+.min-vw-0 { min-width: 0; }
+
+.sidebar {
+    width: 240px;
+    min-height: 100vh;
+    background: var(--sidebar-bg);
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
+}
+
+.sidebar .nav-link {
+    color: rgba(255, 255, 255, .8);
+    border-radius: .5rem;
+    margin-bottom: 2px;
+}
+
+.sidebar .nav-link i { margin-right: .5rem; }
+
+.sidebar .nav-link:hover { background: rgba(255, 255, 255, .08); color: #fff; }
+
+.sidebar .nav-link.active { background: var(--sidebar-active); color: #fff; }
+
+.sidebar .nav-section {
+    font-size: .7rem;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    color: rgba(255, 255, 255, .45);
+    margin: 1rem 0 .3rem .75rem;
+}
+
+.topbar { min-height: 56px; position: sticky; top: 0; z-index: 10; }
+
+.stat-card { border: 0; border-radius: .75rem; }
+.stat-card .stat-icon {
+    width: 48px; height: 48px;
+    border-radius: .75rem;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 1.4rem;
+}
+.stat-card .stat-value { font-size: 1.3rem; font-weight: 600; white-space: nowrap; }
+
+.card { border-radius: .75rem; }
+.table > :not(caption) > * > * { vertical-align: middle; }
+.table-hover tbody tr.clickable { cursor: pointer; }
+
+.login-page { background: linear-gradient(135deg, #14213d 0%, #0d6efd 100%); }
+.login-card { width: 100%; max-width: 420px; border-radius: 1rem; }
+
+.type-selector .btn { flex: 1; }
+
+.balance-preview { font-size: 1.1rem; }
+
+@media (max-width: 991.98px) {
+    .sidebar {
+        position: fixed;
+        left: -260px;
+        z-index: 1050;
+        transition: left .2s ease;
+    }
+    .sidebar.show { left: 0; box-shadow: 0 0 40px rgba(0, 0, 0, .4); }
+}
